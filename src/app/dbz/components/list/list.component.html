@@ -6,20 +6,21 @@
   let isFirst = first;
   let isLast = last;
   let isEven = even;"
-  class="list-group-item" [ngClass]="
+  class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="
   {
-    'list-group-item-success':isFirst,
+    'list-group-item-success':isLast,
     'list-group-item-primary': isEven
   }">
-    <span class="text-primary">
-      {{i + 1}}.
-    </span>
-    <span>
-      {{characterItem.name}} -
-    </span>
+
+  <div>
+    <span class="text-primary">{{i + 1}}.</span>
+    <strong>Name: </strong>
+    <span>{{characterItem.name}} -</span>
     <strong>Power: </strong>
-    <span>
-      {{characterItem.power}}
-    </span>
+    <span>{{characterItem.power}}</span>
+  </div>
+
+  <button class="btn btn-danger" (click)="onDeleteCharacter(characterItem.id)">X</button>
+
   </li>
 </ul>
